@@ -1,24 +1,25 @@
-%define product		LDAPUserFolder
-%define version		2.7
-%define release		1
+%define Product	LDAPUserFolder
+%define product	ldapuserfolder
+%define name    zope-%{Product}
+%define version 2.8
+%define release %mkrel 1
 
 %define zope_minver	2.7.1
-
 %define zope_home	%{_prefix}/lib/zope
 %define software_home	%{zope_home}/lib/python
-%define mVersion	%(echo '%{version}' | sed -e 's/\\./_/g')
 
-Summary:	User folder replacement for Zope that authenticates Zope users against LDAP
-Name:		zope-%{product}
+Name:		%{name}
 Version:	%{version}
-Release:	%mkrel %{release}
+Release:	%{release}
+Summary:	User folder replacement for Zope that authenticates Zope users against LDAP
 License:	GPL
 Group:		System/Servers
-Source:		http://www.dataflake.org/software/ldapuserfolder/ldapuserfolder_%{version}/LDAPUserFolder-%{mVersion}.tar.bz2
 URL:		http://www.dataflake.org/software/ldapuserfolder/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:	noarch
-Requires:	zope >= %{zope_minver} python-ldap
+Source:		http://www.dataflake.org/software/ldapuserfolder/ldapuserfolder_%{version}/LDAPUserFolder-%{version}.tgz
+Requires:	zope >= %{zope_minver}
+Requires:	python2.4-ldap
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 This product is a replacement for a Zope user folder. It 
@@ -52,8 +53,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(0644, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-
-
