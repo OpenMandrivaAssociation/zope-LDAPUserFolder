@@ -19,7 +19,6 @@ Source:		http://www.dataflake.org/software/ldapuserfolder/ldapuserfolder_%{versi
 Requires:	zope >= %{zope_minver}
 Requires:	python2.4-ldap
 BuildArch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 This product is a replacement for a Zope user folder. It 
