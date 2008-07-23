@@ -2,7 +2,7 @@
 %define product	ldapuserfolder
 %define name    zope-%{Product}
 %define version 2.8
-%define release %mkrel 1
+%define release %mkrel 3
 
 %define zope_minver	2.7.1
 %define zope_home	%{_prefix}/lib/zope
