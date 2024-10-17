@@ -14,7 +14,7 @@ Release:	%{release}
 Summary:	User folder replacement for Zope that authenticates Zope users against LDAP
 License:	GPL
 Group:		System/Servers
-URL:		http://www.dataflake.org/software/ldapuserfolder/
+URL:		https://www.dataflake.org/software/ldapuserfolder/
 Source:		http://www.dataflake.org/software/ldapuserfolder/ldapuserfolder_%{version}/LDAPUserFolder-%{version}.tgz
 Requires:	zope >= %{zope_minver}
 Requires:	python2.4-ldap
